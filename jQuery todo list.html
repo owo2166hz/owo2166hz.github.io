@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>FE201</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.btn').click(function(e) {
+        const value = $('.todo-input').val()
+        $('.todo-input')
+        $('.todo-input').val('')
+        $('.todos').append(`
+          <div class="todo">
+            ${value}
+            <button class="btn-mark">標記完成</button>
+            <button class="btn-delete">刪除</button>
+          </div>`
+        )
+      })
+
+      $('.btn-remove-all').click(() => {
+        $('.todos').empty();
+      })
+
+      $('.todos').on('click', '.btn-delete', function(e) {
+        $(e.target).parent().fadeOut()
+      })
+
+      $('.todos').on('click', '.btn-mark', function(e) {
+        const todo = $(e.target).parent();
+        // 變成未完成
+        if (todo.hasClass('completed')) {
+          todo.css('color', 'black')
+          todo.removeClass('completed')
+          $(e.target).text('標記完成')
+        } else {
+          todo.css('color', 'green')
+          todo.addClass('completed')
+          $(e.target).text('標記未完成')
+        }
+        
+      })
+    })
+
+  </script>
+  <style>
+      
+  </style>
+</head>
+<header>
+  <div class="navbar">
+      <div class="logo"><a href="#">無限作品集</a></div>
+      <ul class="links" id="my-list">
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="about.html">關於我</a></li>
+          <li><a href="services.html">作品</a></li>
+          <li><a href="contact.html">聯繫我</a></li>
+          
+      </ul>
+      <a href="#" class="action_btn">Get Started</a>
+      <div class="toggle_btn">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+  </div>
+  
+  <div class="drop_DownMeun">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於我</a></li>
+      <li><a href="services.html">作品</a></li>
+      <li><a href="contact.html">聯繫我</a></li>
+      <li><a href="#" class="action_btn">Get Started</a></li>
+  </div>
+  
+</header>
+<body>
+  <input class="todo-input"/>
+  <button class="btn">Add todo</button>
+  <button class="btn-remove-all">Remove all todos</button>
+  <div class="todos">
+
+  </div>
+</body>
+</html>

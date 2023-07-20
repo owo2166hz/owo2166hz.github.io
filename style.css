@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Open Sans',sans-serif;
+}
+.todo {
+    padding: 12px;
+    border: 1px solid rgb(253, 253, 253);
+    color: rgb(214, 214, 214);
+  }
+
+img {
+    
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 37.500;
+    margin-right: 10px;
+    height: 170px;
+    width: 170px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+.div_boxbox{
+    width: 909px;
+    height: 255px;
+}
+    
+.div_box {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+    vertical-align: top;
+}
+
+body{
+    height: 100vh;
+    background-image: url('OIG4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+li{
+    list-style: none;
+    
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1rem;
+}
+a:hover{
+    color:lightblue;
+}
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+.navbar .toggle_btn{
+    color: aliceblue;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn {
+    background-color: lightblue;
+    color: aliceblue;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    position: absolute;
+    right: 5px;
+    
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color:aliceblue
+}
+.action_btn:active{
+    scale:0.95
+}
+
+@media (max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display:none;
+        
+    }
+    .navbar .toggle_btn{
+        display: block;
+        position: absolute;
+        right: 5px;
+    }
+    .drop_DownMeun{
+        display: block;
+    }
+    
+}
+
+
+.drop_DownMeun{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    background-color:rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.drop_DownMeun.open{
+    height: 240px;
+    display: block;
+}
+.drop_DownMeun li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.drop_DownMeun .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color:aliceblue ;
+}
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#my-list {
+    padding-right: 0px;
+    padding-left: 20px;
+}

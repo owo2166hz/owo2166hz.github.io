@@ -1,0 +1,73 @@
+<!--
+ * @Author: owo2166hz owo2166hz@gmail.com
+ * @Date: 2023-07-14 14:10:56
+ * @LastEditors: owo2166hz owo2166hz@gmail.com
+ * @LastEditTime: 2023-07-16 18:45:39
+ * @FilePath: \OWO\20_陳榮緯\網頁實作\index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">無限作品集</a></div>
+            <ul class="links" id="my-list">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於我</a></li>
+                <li><a href="services.html">作品</a></li>
+                <li><a href="contact.html">聯繫我</a></li>
+                
+            </ul>
+            <a href="#" class="action_btn">Get Started</a>
+            <div class="toggle_btn">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+        </div>
+        
+        <div class="drop_DownMeun">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="about.html">關於我</a></li>
+            <li><a href="services.html">作品</a></li>
+            <li><a href="contact.html">聯繫我</a></li>
+            <li><a href="#" class="action_btn">Get Started</a></li>
+        </div>
+        
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1></h1>
+            <p></p>
+        </section>
+    </main>
+
+    <script>
+        const toggle_Btn = document.querySelector('.toggle_btn')
+        const toggle_BtnIcon = document.querySelector('.toggle_btn i')
+        const drop_DownMeun = document.querySelector('.drop_DownMeun')
+
+        toggle_Btn.onclick = function(){
+            drop_DownMeun.classList.toggle('open')
+            const isOpen = drop_DownMeun.classList.contains('open')
+
+            toggle_BtnIcon.classList = isOpen
+            ?'fas fa-times'
+            :'fas fa-bars'
+
+        }
+    </script>
+    
+</body>
+</html>
