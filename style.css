@@ -221,3 +221,22 @@ section#hero{
   text-decoration: none;
   font-weight: bold;
 }
+.code-section {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #00ffcc;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 100%;
+}
+.code-section pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.code-section h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
