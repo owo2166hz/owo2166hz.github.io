@@ -46,50 +46,7 @@
         
     </header>
 
-<div class="code-section">
-  <h3>牛牛遊戲流程：gameProcedureNiuNiu</h3>
-  <pre><code class="language-js">
-            // 主要遊戲流程
-            async gameProcedureNiuNiu (roomID) {
-            console.log('[gameProcedureNiuNiu]');
-            __pomeloLog.fatal('[gameProcedureNiuNiu]');
 
-            while (true) {
-                await this.gameInit();
-                await this.waitForPlayers();
-                while (true) {
-                await this.waitForPlayers(); // 等待一名玩家
-                this.rounds++;
-                this.roomState.keyData.dice = await this.rollDice(3);
-                await this.resetWagerStatus(); //重置投注狀態
-                await this.updateRoomStatus(3, clockSetting.get('shuffle').time, this.rounds, roomID);
-
-                this.pushAllWithMsgType('下注開始', {
-                    start: Date.now(),
-                    end: Date.now() + clockSetting.get('shuffle').time * 1000,
-                    rounds: this.rounds
-                });
-
-                await this.wagerClock(clockSetting.get('shuffle').time);
-                await this.dealingCard(); // 發牌
-                await this.ResultJudgment(); // 進行結果判定
-                this.pushAllWithMsgType('niuNiuGame_dice', { dice: this.roomState.keyData.dice });
-
-                await this.updateRoomStatus(8, clockSetting.get('shuffle2').time, this.rounds, roomID); 
-                await this.pushRoundResults(); //每回合的結算推波
-                await this.wagerClock(clockSetting.get('shuffle2').time); 
-                await this.Movewastearea(); //將牌移動到廢牌區
-                await this.removeInactivePlayers(); //移除斷線玩家物件
-
-                this.betUidArr = [];
-                this.roomState.keyData.dice = [];
-                console.log('[this.rounds]', this.rounds);
-                break;
-                }
-            }
-            }
-  </code></pre>
-</div>
 
     <script>
         const toggle_Btn = document.querySelector('.toggle_btn')
